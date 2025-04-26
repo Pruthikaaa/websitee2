@@ -8,14 +8,14 @@ export default function EditStudent() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`/api/students/${id}`).then(res => setForm(res.data));
+    axios.get(`https://websitee2.onrender.com${id}`).then(res => setForm(res.data));
   }, [id]);
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.put(`/api/students/${id}`, form)
+    axios.put(`https://websitee2.onrender.com${id}`, form)
       .then(() => navigate('/students'))
       .catch(err => alert('Update failed: ' + err.message));
   };
