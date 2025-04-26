@@ -6,7 +6,9 @@ const cors = require('cors');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://websitee2-1.onrender.com',
+}));
 app.use(express.json());
 
 // MongoDB Connection
@@ -93,3 +95,4 @@ const PORT = process.env.PORT || 5050;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
+
