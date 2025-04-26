@@ -28,7 +28,7 @@ export default function AddStudent() {
       return;
     }
 
-    axios.post('/api/students', form)
+    axios.post('https://websitee2.onrender.com', form)
       .then(() => {
         alert('✅ Student added successfully!');
         navigate('/students');
